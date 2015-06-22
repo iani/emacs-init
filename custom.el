@@ -6,11 +6,11 @@
  '(ansi-color-names-vector
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/savefile/bookmarks")
- '(bookmark-default-file "/Users/iani/Documents/Dev/Emacs/emacs-init/user/bookmarks")
+ '(bookmark-default-file "/Users/iani/.emacs.d/savefile/bookmarks")
  '(custom-enabled-themes (quote (tangotango)))
  '(custom-safe-themes
    (quote
-    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "3dafeadb813a33031848dfebfa0928e37e7a3c18efefa10f3e9f48d1993598d3" "cf205b711e61963020e2d1561e87cdbe7727679b58af25dcabfe5073572b16f0" default)))
+    ("a31c86c0a9ba5d06480b02bb912ae58753e09f13edeb07af8927d67c3bb94d68" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "3dafeadb813a33031848dfebfa0928e37e7a3c18efefa10f3e9f48d1993598d3" "cf205b711e61963020e2d1561e87cdbe7727679b58af25dcabfe5073572b16f0" default)))
  '(fci-rule-color "#383838")
  '(org-imenu-depth 5)
  '(vc-annotate-background "#2B2B2B")
