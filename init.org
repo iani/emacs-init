@@ -73,6 +73,10 @@
 #+END_SRC
 
 *** Cursor movement, Windmove, Buffer-move
+    :PROPERTIES:
+    :ID:       554F608B-79DB-4C3C-91F3-0B04090C3BB2
+    :eval-id:  4
+    :END:
 
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "s-<") 'beginning-of-buffer)
@@ -80,7 +84,7 @@
   (global-set-key (kbd "s-S-<right>") 'windmove-right)
   (global-set-key (kbd "s-S-<left>") 'windmove-left)
   (global-set-key (kbd "s-S-<up>") 'windmove-up)
-  (global-set-key (kbd "s-M-<down>") 'windmove-down)
+  (global-set-key (kbd "s-S-<down>") 'windmove-down)
   (global-set-key (kbd "s-M-<right>") 'buf-move-right)
   (global-set-key (kbd "s-M-<left>") 'buf-move-left)
   (global-set-key (kbd "s-M-<up>") 'buf-move-up)
@@ -104,6 +108,40 @@
   (add-hook 'org-mode-hook
             (lambda () (local-set-key (kbd "C-c C-'") 'org-edit-special)))
 #+END_SRC
+*** SuperCollider
+
+Setup:
+
+#+BEGIN_SRC emacs-lisp
+  (require 'sclang)
+  (defvar sc_userAppSupportDir
+    (expand-file-name "~/Library/Application Support/SuperCollider"))
+
+  ;; Make path of sclang executable available to emacs shell load path
+
+  ;; For Version 3.6.6:
+  (add-to-list
+   'exec-path
+   "/Applications/SuperCollider/SuperCollider.app/Contents/Resources/")
+
+  ;; For Version 3.7:
+  (add-to-list
+   'exec-path
+   "/Applications/SuperCollider/SuperCollider.app/Contents/MacOS/")
+
+  ;; Disable switching to default SuperCollider Workspace when recompiling SClang
+  (setq sclang-show-workspace-on-startup nil)
+
+#+END_SRC
+Shortcuts:
+
+#+BEGIN_SRC emacs-lisp
+  ;; Global keyboard shortcut for starting sclang
+  (global-set-key (kbd "C-c M-s") 'sclang-start)
+  ;; Show workspace
+  (global-set-key (kbd "C-c C-M-w") 'sclang-switch-to-workspace)
+#+END_SRC
+
 *** magit
 
 #+BEGIN_SRC emacs-lisp
