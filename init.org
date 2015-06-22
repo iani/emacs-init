@@ -1,4 +1,4 @@
-* Packages Used
+* Packages Used, Require packages
 
 - theme-tangotango
 - ace
@@ -11,6 +11,12 @@
 - icicles
 - windmove (built-in)
 - buffer-move
+: ================================================================
+- bookmark+
+
+#+BEGIN_SRC emacs-lisp
+(require 'bookmark+)
+#+END_SRC
 
 ** To examine
 
@@ -61,8 +67,9 @@
 *** Helm
 
 #+BEGIN_SRC emacs-lisp
-  (global-set-key (kbd "C-S-h m") 'helm-mini)
   (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "C-S-h m") 'helm-mini)
+  (global-set-key (kbd "C-S-h b") 'helm-bookmarks)
 #+END_SRC
 
 *** Cursor movement, Windmove, Buffer-move
