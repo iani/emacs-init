@@ -13,6 +13,8 @@
 - buffer-move
 : ================================================================
 - bookmark+
+- deft
+- powerline
 
 #+BEGIN_SRC emacs-lisp
 (require 'bookmark+)
@@ -25,9 +27,14 @@
 
 * General
 ** Theme
+   :PROPERTIES:
+   :ORDERED:  t
+   :END:
 
 #+Begin_SRC emacs-lisp
-(load-theme 'tangotango)
+  (load-theme 'tangotango)
+  ;; (require 'powerline)
+  ;; (powerline-default-theme)
 #+END_SRC
 
 ** Fonts
@@ -73,14 +80,15 @@
   (global-set-key (kbd "C-S-h l") 'helm-buffer-list)
   (global-set-key (kbd "C-S-h s") 'helm-swoop)
   (global-set-key (kbd "C-S-h f") 'helm-find-file)
+  (global-set-key (kbd "C-S-h i") 'helm-imenu)
 
-  (defun iz-helm-ack ()
+  (defun helm-ack ()
     (interactive)
   ;;  (dired iz-log-dir)
     (let ((helm-grep-use-ack-p t))
       (helm-do-grep)))
 
-  (global-set-key (kbd "C-S-h a") 'iz-helm-ack)
+  (global-set-key (kbd "C-S-h a") 'helm-ack)
 
 
 #+END_SRC
