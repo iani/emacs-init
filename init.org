@@ -1,0 +1,99 @@
+* Packages Used
+
+- theme-tangotango
+- ace
+- smex
+- ido-vertical-mode
+- ido-universal
+- grizzl
+- flx-ido
+- helm-swoop
+- icicles
+- windmove (built-in)
+- buffer-move
+
+** To examine
+
+- FrameMove
+- toggle-window-split
+
+* General
+** Theme
+
+#+Begin_SRC emacs-lisp
+(load-theme 'tangotango)
+#+END_SRC
+
+** Fonts
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'default-frame-alist
+               '(font . "Anonymous Pro-12"))
+
+  (set-face-attribute 'default nil :font "Anonymous Pro-12")
+
+  (defun larger-frame-font ()
+    (interactive)
+
+    (set-face-attribute
+     'default nil
+     :height
+     (+ (face-attribute 'default :height) 10)) )
+
+  (defun smaller-frame-font ()
+    (interactive)
+    (set-face-attribute
+     'default nil
+     :height
+     (- (face-attribute 'default :height) 10)) )
+
+  (global-set-key (kbd "C-c C--") 'smaller-frame-font)
+  (global-set-key (kbd "C-c C-+") 'larger-frame-font)
+#+END_SRC
+
+** Screen
+
+#+BEGIN_SRC emacs-lisp
+(toggle-frame-fullscreen)
+#+END_SRC
+
+** Navigation
+*** Helm
+
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-S-h m") 'helm-mini)
+  (global-set-key (kbd "M-x") 'helm-M-x)
+#+END_SRC
+
+*** Cursor movement, Windmove, Buffer-move
+
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "s-<") 'beginning-of-buffer)
+  (global-set-key (kbd "s->") 'end-of-buffer)
+  (global-set-key (kbd "s-S-<right>") 'windmove-right)
+  (global-set-key (kbd "s-S-<left>") 'windmove-left)
+  (global-set-key (kbd "s-S-<up>") 'windmove-up)
+  (global-set-key (kbd "s-M-<down>") 'windmove-down)
+  (global-set-key (kbd "s-M-<right>") 'buf-move-right)
+  (global-set-key (kbd "s-M-<left>") 'buf-move-left)
+  (global-set-key (kbd "s-M-<up>") 'buf-move-up)
+  (global-set-key (kbd "s-M-<down>") 'buf-move-down)
+#+END_SRC
+
+** Command Completion
+#+BEGIN_SRC emacs-lisp
+  (require 'ido)
+  (require 'flx-ido)
+  (require 'ido-vertical-mode)
+  (ido-mode t)
+  (ido-vertical-mode t)
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+
+#+END_SRC
+** Modes
+*** Org-Mode
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'org-mode-hook
+            (lambda () (local-set-key (kbd "C-c C-'") 'org-edit-special)))
+#+END_SRC
