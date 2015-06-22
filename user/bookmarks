@@ -1,0 +1,47 @@
+;;;; Emacs Bookmark Format Version 1 ;;;;
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(#1=(#("emacs-init" 0 10
+      (bmkp-full-record #1#))
+    (buffer-name . "emacs-init")
+    (visits . 0)
+    (time . #2=(21895 58660 445289 0))
+    (created . #2#)
+    (position . 487)
+    (filename . "   - no file -")
+    (desktop-file . "/Users/iani/Documents/Dev/Emacs/emacs-init/.emacs.desktop")
+    (handler . bmkp-jump-desktop))
+#1=(#("empty" 0 5
+      (bmkp-full-record #1#))
+    (buffer-name . "*Messages*")
+    (visits . 1)
+    (time 21895 58512 583928 0)
+    (created 21895 58467 547442 0)
+    (position . 115)
+    (filename . "   - no file -")
+    (desktop-file . "/Users/iani/Documents/Dev/Emacs/emacs-init/.emacs.desktop")
+    (handler . bmkp-jump-desktop))
+#1=(#("init-org-file" 0 13
+      (bmkp-full-record #1#))
+    (filename . "~/Documents/Dev/Emacs/emacs-init/init.org")
+    (buffer-name . "init.org")
+    (front-context-string)
+    (rear-context-string . "al)))\n#+END_SRC\n")
+    (front-context-region-string)
+    (rear-context-region-string)
+    (visits . 3)
+    (time 21895 58630 221167 0)
+    (created 21895 57662 330872 0)
+    (position . 2237))
+#1=(#("personal" 0 8
+      (bmkp-full-record #1#))
+    (buffer-name . "personal")
+    (visits . 2)
+    (time 21895 58499 622309 0)
+    (created 21895 57521 438119 0)
+    (position . 346)
+    (filename . "   - no file -")
+    (desktop-file . "/Users/iani/.emacs.d/personal/.emacs.desktop")
+    (handler . bmkp-jump-desktop))
+)

@@ -1,0 +1,170 @@
+* Packages Used, Require packages
+
+- theme-tangotango
+- ace
+- smex
+- ido-vertical-mode
+- ido-universal
+- grizzl
+- flx-ido
+- helm-swoop
+- icicles
+- windmove (built-in)
+- buffer-move
+: ================================================================
+- bookmark+
+- deft
+- powerline
+
+#+BEGIN_SRC emacs-lisp
+(require 'bookmark+)
+#+END_SRC
+
+** To examine
+
+- FrameMove
+- toggle-window-split
+
+* General
+** Theme
+   :PROPERTIES:
+   :ORDERED:  t
+   :END:
+
+#+Begin_SRC emacs-lisp
+  (load-theme 'tangotango)
+  ;; (require 'powerline)
+  ;; (powerline-default-theme)
+#+END_SRC
+
+** Fonts
+
+#+BEGIN_SRC emacs-lisp
+  (add-to-list 'default-frame-alist
+               '(font . "Anonymous Pro-12"))
+
+  (set-face-attribute 'default nil :font "Anonymous Pro-12")
+
+  (defun larger-frame-font ()
+    (interactive)
+
+    (set-face-attribute
+     'default nil
+     :height
+     (+ (face-attribute 'default :height) 10)) )
+
+  (defun smaller-frame-font ()
+    (interactive)
+    (set-face-attribute
+     'default nil
+     :height
+     (- (face-attribute 'default :height) 10)) )
+
+  (global-set-key (kbd "C-c C--") 'smaller-frame-font)
+  (global-set-key (kbd "C-c C-+") 'larger-frame-font)
+#+END_SRC
+
+** Screen
+
+#+BEGIN_SRC emacs-lisp
+(toggle-frame-fullscreen)
+#+END_SRC
+
+** Navigation
+*** Helm
+
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "C-S-h m") 'helm-mini)
+  (global-set-key (kbd "C-S-h b") 'helm-bookmarks)
+  (global-set-key (kbd "C-S-h l") 'helm-buffer-list)
+  (global-set-key (kbd "C-S-h s") 'helm-swoop)
+  (global-set-key (kbd "C-S-h f") 'helm-find-file)
+  (global-set-key (kbd "C-S-h i") 'helm-imenu)
+
+  (defun helm-ack ()
+    (interactive)
+  ;;  (dired iz-log-dir)
+    (let ((helm-grep-use-ack-p t))
+      (helm-do-grep)))
+
+  (global-set-key (kbd "C-S-h a") 'helm-ack)
+
+
+#+END_SRC
+
+*** Cursor movement, Windmove, Buffer-move
+    :PROPERTIES:
+    :ID:       554F608B-79DB-4C3C-91F3-0B04090C3BB2
+    :eval-id:  4
+    :END:
+
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "s-<") 'beginning-of-buffer)
+  (global-set-key (kbd "s->") 'end-of-buffer)
+  (global-set-key (kbd "s-S-<right>") 'windmove-right)
+  (global-set-key (kbd "s-S-<left>") 'windmove-left)
+  (global-set-key (kbd "s-S-<up>") 'windmove-up)
+  (global-set-key (kbd "s-S-<down>") 'windmove-down)
+  (global-set-key (kbd "s-M-<right>") 'buf-move-right)
+  (global-set-key (kbd "s-M-<left>") 'buf-move-left)
+  (global-set-key (kbd "s-M-<up>") 'buf-move-up)
+  (global-set-key (kbd "s-M-<down>") 'buf-move-down)
+#+END_SRC
+
+** Command Completion
+#+BEGIN_SRC emacs-lisp
+  (require 'ido)
+  (require 'flx-ido)
+  (require 'ido-vertical-mode)
+  (ido-mode t)
+  (ido-vertical-mode t)
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+
+#+END_SRC
+** Modes
+*** Org-Mode
+
+#+BEGIN_SRC emacs-lisp
+  (add-hook 'org-mode-hook
+            (lambda () (local-set-key (kbd "C-c C-'") 'org-edit-special)))
+#+END_SRC
+*** SuperCollider
+
+Setup:
+
+#+BEGIN_SRC emacs-lisp
+  (require 'sclang)
+  (defvar sc_userAppSupportDir
+    (expand-file-name "~/Library/Application Support/SuperCollider"))
+
+  ;; Make path of sclang executable available to emacs shell load path
+
+  ;; For Version 3.6.6:
+  (add-to-list
+   'exec-path
+   "/Applications/SuperCollider/SuperCollider.app/Contents/Resources/")
+
+  ;; For Version 3.7:
+  (add-to-list
+   'exec-path
+   "/Applications/SuperCollider/SuperCollider.app/Contents/MacOS/")
+
+  ;; Disable switching to default SuperCollider Workspace when recompiling SClang
+  (setq sclang-show-workspace-on-startup nil)
+
+#+END_SRC
+Shortcuts:
+
+#+BEGIN_SRC emacs-lisp
+  ;; Global keyboard shortcut for starting sclang
+  (global-set-key (kbd "C-c M-s") 'sclang-start)
+  ;; Show workspace
+  (global-set-key (kbd "C-c C-M-w") 'sclang-switch-to-workspace)
+#+END_SRC
+
+*** magit
+
+#+BEGIN_SRC emacs-lisp
+(setq magit-last-seen-setup-instructions "1.4.0")
+#+END_SRC
