@@ -104,3 +104,8 @@
   (add-hook 'org-mode-hook
             (lambda () (local-set-key (kbd "C-c C-'") 'org-edit-special)))
 #+END_SRC
+*** magit
+
+#+BEGIN_SRC emacs-lisp
+(setq magit-last-seen-setup-instructions "1.4.0")
+#+END_SRC
