@@ -94,7 +94,6 @@
 
   (defun helm-ack ()
     (interactive)
-  ;;  (dired iz-log-dir)
     (let ((helm-grep-use-ack-p t))
       (helm-do-grep)))
 
