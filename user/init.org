@@ -39,9 +39,10 @@
    :END:
 
 #+Begin_SRC emacs-lisp
-  (load-theme 'tangotango)
-  ;; (require 'powerline)
-  ;; (powerline-default-theme)
+  ;; (load-theme 'tangotango) ;; disagrees with helm-selection face color
+  (load-theme 'zenburn)
+  (require 'powerline)
+  (powerline-default-theme)
 #+END_SRC
 
 ** Fonts
@@ -81,11 +82,11 @@
 *** Helm
     :PROPERTIES:
     :ID:       31AE1C7E-4F16-4295-9E4F-23A47DD8DC7C
-    :eval-id:  3
+    :eval-id:  8
     :END:
 
 #+BEGIN_SRC emacs-lisp
-  (global-set-key (kbd "M-x") 'helm-M-x)
+  (global-set-key (kbd "M-X") 'helm-M-x)
   (global-set-key (kbd "C-S-h m") 'helm-mini)
   (global-set-key (kbd "C-S-h b") 'helm-bookmarks)
   (global-set-key (kbd "C-S-h l") 'helm-buffers-list)
