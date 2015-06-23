@@ -15,6 +15,7 @@
 - bookmark+
 - deft
 - powerline
+- calfw
 : ================================================================
 - paredit
 - hl-sexp
@@ -89,7 +90,7 @@
   (global-set-key (kbd "C-S-h b") 'helm-bookmarks)
   (global-set-key (kbd "C-S-h l") 'helm-buffer-list)
   (global-set-key (kbd "C-S-h s") 'helm-swoop)
-  (global-set-key (kbd "C-S-h f") 'helm-find-file)
+  (global-set-key (kbd "C-S-h f") 'helm-find-files)
   (global-set-key (kbd "C-S-h i") 'helm-imenu)
 
   (defun helm-ack ()
@@ -98,8 +99,6 @@
       (helm-do-grep)))
 
   (global-set-key (kbd "C-S-h a") 'helm-ack)
-
-
 #+END_SRC
 
 *** Cursor movement, Windmove, Buffer-move
