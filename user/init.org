@@ -187,8 +187,9 @@
 
   (add-hook 'org-mode-hook
             (lambda ()
-              (icy-mode) ;; icy mode
-              ))
+              (icy-mode)
+              (visual-line-mode)
+              (whitespace-mode -1)))
 
 #+END_SRC
 
