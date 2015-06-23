@@ -151,7 +151,10 @@
   (add-hook 'emacs-lisp-mode-hook 'hl-sexp-mode)
   (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
   (global-set-key (kbd "C-s-L h") 'hs-hide-level)
-  (global-set-key (kbd "C-s-L s") 'hs-show-all)
+  (global-set-key (kbd "C-s-L A") 'hs-show-all)
+  (global-set-key (kbd "C-s-L a") 'hs-hide-all)
+  (global-set-key (kbd "C-s-L b") 'hs-hide-block)
+  (global-set-key (kbd "C-s-L B") 'hs-show-block)
 
   (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
   (require 'paredit) ;; smart edit parentheses
