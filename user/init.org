@@ -131,7 +131,7 @@
   (global-set-key (kbd "C-S-a d") 'ace-window)
   (global-set-key (kbd "C-S-a W") 'ace-window)
 #+END_SRC
-** Command Completion
+** Command Completion and Auto-Complete
 #+BEGIN_SRC emacs-lisp
   (require 'ido)
   (require 'flx-ido)
@@ -139,7 +139,9 @@
   (ido-mode t)
   (ido-vertical-mode t)
   (setq ido-vertical-define-keys 'C-n-and-C-p-only)
-
+  (require 'auto-complete)
+  (require 'auto-complete-config)
+  (ac-config-default)
 #+END_SRC
 
 * Modes
@@ -157,7 +159,7 @@
   (require 'litable) ;; show lisp eval results in the buffer, interactively
   (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
   ;; (add-hook 'emacs-lisp-mode-hook 'turn-on-whitespace-mode) ;; not defined
-  ;; (add-hook 'emacs-lisp-mode-hook 'auto-complete-mode) ;; fails?
+  (add-hook 'emacs-lisp-mode-hook 'auto-complete-mode) ;; fails?
   (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
   ;; H-C-i:
   (define-key emacs-lisp-mode-map (kbd "H-TAB") 'icicle-imenu-command)
@@ -206,6 +208,14 @@ Setup:
   ;; Disable switching to default SuperCollider Workspace when recompiling SClang
   (setq sclang-show-workspace-on-startup nil)
 
+  ;; Customize sclang mode:
+  (add-hook 'sclang-mode-hook 'rainbow-delimiters-mode)
+  (add-hook 'sclang-mode-hook 'hl-sexp-mode)
+  (add-hook 'sclang-mode-hook 'hs-minor-mode)
+  (add-hook 'sclang-mode-hook 'electric-pair-mode)
+  ;; (add-hook 'sclang-mode-hook 'yas-minor-mode)
+  (add-hook 'sclang-mode-hook 'auto-complete-mode)
+  (add-hook 'sclang-mode-hook 'paredit-mode)
 #+END_SRC
 Shortcuts:
 
