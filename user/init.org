@@ -21,7 +21,7 @@
 - hl-sexp
 - multiple-cursors
 - rainbow-delimiters
-
+- litable
 
 #+BEGIN_SRC emacs-lisp
 (require 'bookmark+)
@@ -140,14 +140,48 @@
   (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 
 #+END_SRC
+
 * Modes
-*** Org-Mode
+** Emacs-lisp-mode
 
 #+BEGIN_SRC emacs-lisp
-  (add-hook 'org-mode-hook
-            (lambda () (local-set-key (kbd "C-c C-'") 'org-edit-special)))
+  (add-hook 'emacs-lisp-mode-hook 'hl-sexp-mode)
+  (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
+  (global-set-key (kbd "C-s-L h") 'hs-hide-level)
+  (global-set-key (kbd "C-s-L s") 'hs-show-all)
+
+  (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
+  (require 'paredit) ;; smart edit parentheses
+  (require 'cl)      ;; include common lisp library
+  (require 'litable) ;; show lisp eval results in the buffer, interactively
+  (add-hook 'emacs-lisp-mode-hook 'paredit-mode)
+  ;; (add-hook 'emacs-lisp-mode-hook 'turn-on-whitespace-mode) ;; not defined
+  ;; (add-hook 'emacs-lisp-mode-hook 'auto-complete-mode) ;; fails?
+  (add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+  ;; H-C-i:
+  (define-key emacs-lisp-mode-map (kbd "H-TAB") 'icicle-imenu-command)
 #+END_SRC
-*** SuperCollider
+
+** Org-Mode
+
+Code text coloring in org mode source code blocks:
+
+#+BEGIN_SRC emacs-lisp
+(setq org-src-fontify-natively t)
+#+END_SRC
+
+Keyboard shortcuts for org-mode:
+#+BEGIN_SRC emacs-lisp
+  ;; icicle key binding conflicts fixed with:
+  ;; M-x customize-group RET Icicles-Key-Bindings
+
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (icy-mode) ;; icy mode
+              ))
+
+#+END_SRC
+** SuperCollider
 
 Setup:
 
@@ -180,13 +214,13 @@ Shortcuts:
   ;; Show workspace
   (global-set-key (kbd "C-c C-M-w") 'sclang-switch-to-workspace)
 #+END_SRC
-*** magit
+** magit
 
 #+BEGIN_SRC emacs-lisp
 (setq magit-last-seen-setup-instructions "1.4.0")
 #+END_SRC
 
-*** deft
+** deft
 
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-S-d") 'deft)
