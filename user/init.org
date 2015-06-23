@@ -22,6 +22,8 @@
 - multiple-cursors
 - rainbow-delimiters
 - litable
+- moe-theme
+- linum-relative
 
 #+BEGIN_SRC emacs-lisp
 (require 'bookmark+)
@@ -40,10 +42,14 @@
 
 #+Begin_SRC emacs-lisp
   ;; (load-theme 'tangotango) ;; disagrees with helm-selection face color
-  (load-theme 'zenburn)
+  ;; (load-theme 'zenburn)
+  (require 'moe-theme)
+  (setq powerline-moe-theme t)
+  (moe-dark)
   (require 'powerline)
   (powerline-default-theme)
-#+END_SRC
+  (require 'linum-relative)
+#+End_SRC
 
 ** Fonts
 
@@ -169,6 +175,12 @@
 #+END_SRC
 
 ** Org-Mode
+
+*** Turn on org indent mode
+
+#+BEGIN_SRC emacs-lisp
+(setq org-startup-indented t)
+#+END_SRC
 
 *** Code text coloring in org mode source code blocks
 
