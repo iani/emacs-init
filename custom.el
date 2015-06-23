@@ -419,6 +419,7 @@
       lacarte-execute-menu-command
       (fboundp
        (quote lacarte-execute-menu-command))))))
+ '(org-attach-directory "~/.org-attachments/")
  '(org-imenu-depth 5)
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map

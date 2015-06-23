@@ -170,13 +170,17 @@
 
 ** Org-Mode
 
-Code text coloring in org mode source code blocks:
+*** Code text coloring in org mode source code blocks
 
 #+BEGIN_SRC emacs-lisp
 (setq org-src-fontify-natively t)
 #+END_SRC
 
-Keyboard shortcuts for org-mode:
+*** Keyboard shortcuts for org-mode                                  :ATTACH:
+    :PROPERTIES:
+    :Attachments: test-attacment-1.org
+    :ID:       513D7E02-3ADD-4542-8F13-369A8C351F16
+    :END:
 #+BEGIN_SRC emacs-lisp
   ;; icicle key binding conflicts fixed with:
   ;; M-x customize-group RET Icicles-Key-Bindings
@@ -187,6 +191,7 @@ Keyboard shortcuts for org-mode:
               ))
 
 #+END_SRC
+
 ** SuperCollider
 
 Setup:
