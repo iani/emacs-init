@@ -420,6 +420,7 @@
       lacarte-execute-menu-command
       (fboundp
        (quote lacarte-execute-menu-command))))))
+ '(initial-frame-alist (quote ((fullscreen . fullboth))))
  '(org-attach-directory "~/.org-attachments/")
  '(org-imenu-depth 5)
  '(powerline-default-separator (quote contour))

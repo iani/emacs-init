@@ -84,12 +84,6 @@
   (setq visible-bell t)
 #+END_SRC
 
-** Screen
-
-#+BEGIN_SRC emacs-lisp
-(toggle-frame-fullscreen)
-#+END_SRC
-
 ** Navigation
 *** Helm
     :PROPERTIES:
