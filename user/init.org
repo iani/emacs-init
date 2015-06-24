@@ -163,7 +163,7 @@
 #+BEGIN_SRC emacs-lisp
   (add-hook 'emacs-lisp-mode-hook 'hl-sexp-mode)
   (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
-  (global-set-key (kbd "C-s-L h") 'hs-hide-level)
+  (global-set-key (kbd "C-s-L l") 'hs-hide-level) ;; there is no show level
   (global-set-key (kbd "C-s-L A") 'hs-show-all)
   (global-set-key (kbd "C-s-L a") 'hs-hide-all)
   (global-set-key (kbd "C-s-L b") 'hs-hide-block)
