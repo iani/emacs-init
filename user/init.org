@@ -156,6 +156,13 @@
   (ac-config-default)
 #+END_SRC
 
+** Reload init file
+#+BEGIN_SRC emacs-lisp
+  (defun reload-init-fie ()
+    "Reload the init file without restarting emacs."
+    (interactive)
+    (load-file (file-truename "~/.emacs.d/personal/init.el")))
+#+END_SRC
 * Modes
 ** Emacs-lisp-mode
 
