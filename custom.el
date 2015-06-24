@@ -452,7 +452,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-block-end-line ((t (:background "#3a3a3a" :foreground "dark cyan"))) t)
- '(powerline-active1 ((t (:inherit mode-line :background "grey22" :foreground "dark cyan"))))
+ '(powerline-active1 ((t (:inherit mode-line :background "dark cyan" :foreground "dark blue"))))
  '(powerline-active2 ((t (:inherit mode-line :background "gold1"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#CCFFCC"))))
  '(rainbow-delimiters-depth-2-face ((t (:foreground "#33FF66"))))
