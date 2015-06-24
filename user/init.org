@@ -40,11 +40,6 @@
 
 ** El-get setup
 
-#+BEGIN_SRC emacs-lisp
-  (require 'el-get)
-  (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get/my-el-get-recipes")
-#+END_SRC
-
 ** Load third party packages
 
 #+BEGIN_SRC emacs-lisp
@@ -124,6 +119,7 @@
   (global-set-key (kbd "C-S-h l") 'helm-buffers-list)
   (global-set-key (kbd "C-S-h s") 'helm-swoop)
   (global-set-key (kbd "C-S-h f") 'helm-find-files)
+  (global-set-key (kbd "C-S-h o") 'helm-occur)
   (global-set-key (kbd "C-S-h i") 'helm-imenu)
 
   (defun helm-ack ()
