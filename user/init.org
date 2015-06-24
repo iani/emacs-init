@@ -25,9 +25,10 @@
 - litable
 - moe-theme
 - linum-relative
-** Own
+** Own libraries
 
-- org-pm
+- org-notes :: Note taking framework
+- org-pm :: Publish any org-mode file or section to multiple projects
 
 ** To examine
 
@@ -47,8 +48,9 @@
 ** Load packages
 
 #+BEGIN_SRC emacs-lisp
-(require 'bookmark+)
-(require 'org-pm)
+  (require 'bookmark+)
+  (require 'org-pm)
+  (require 'org-notes)
 #+END_SRC
 
 * General
