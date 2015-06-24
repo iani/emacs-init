@@ -7,6 +7,7 @@
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/savefile/bookmarks")
  '(bookmark-default-file "/Users/iani/.emacs.d/savefile/bookmarks")
+ '(cursor-type (quote hbar))
  '(custom-enabled-themes (quote (tangotango)))
  '(custom-safe-themes
    (quote
@@ -449,7 +450,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-block-end-line ((t (:background "#3a3a3a" :foreground "#005f87"))) t)
+ '(org-block-end-line ((t (:background "#3a3a3a" :foreground "dark cyan"))) t)
  '(powerline-active1 ((t (:inherit mode-line :background "grey22" :foreground "dark cyan"))))
  '(powerline-active2 ((t (:inherit mode-line :background "gold1"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "#CCFFCC"))))

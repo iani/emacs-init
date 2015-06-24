@@ -50,7 +50,6 @@
   (powerline-default-theme)
   (require 'linum-relative)
 #+End_SRC
-
 ** Fonts
 
 #+BEGIN_SRC emacs-lisp
@@ -76,6 +75,13 @@
 
   (global-set-key (kbd "C-c C--") 'smaller-frame-font)
   (global-set-key (kbd "C-c C-+") 'larger-frame-font)
+#+END_SRC
+
+** Cursor
+
+#+BEGIN_SRC emacs-lisp
+  (blink-cursor-mode 1)
+  (setq visible-bell t)
 #+END_SRC
 
 ** Screen
