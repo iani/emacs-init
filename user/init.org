@@ -1,7 +1,10 @@
 * List of Used Packages
-** Diverse
+** Third party
+*** Package management
 
 - el-get
+
+*** Navigation, movement, command completion
 - ace
 - smex
 - ido-vertical-mode
@@ -10,30 +13,42 @@
 - flx-ido
 - helm-swoop
 - icicles
+- imenu+
+
+*** Window and buffer management
 - windmove (built-in)
 - buffer-move
-: ================================================================
+
+*** Bookmarks
 - bookmark+
+
+*** Note taking
 - deft
+*** theme and colors
+
 - powerline
+- moe-theme
+
+*** Org-mode extensions
 - calfw
-: ================================================================
+
+
+*** Coding support
 - paredit
 - hl-sexp
 - multiple-cursors
 - rainbow-delimiters
 - litable
-- moe-theme
 - linum-relative
+
+*** To examine
+
+- FrameMove
+- toggle-window-split
 ** Own libraries
 
 - org-notes :: Note taking framework
 - org-pm :: Publish any org-mode file or section to multiple projects
-
-** To examine
-
-- FrameMove
-- toggle-window-split
 
 
 * Prepare el-get and Load Packages
