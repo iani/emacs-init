@@ -51,9 +51,14 @@
 - org-pm :: Publish any org-mode file or section to multiple projects
 
 
-* Prepare el-get and Load Packages
+* Load Packages
 
 ** El-get setup
+
+#+BEGIN_SRC emacs-lisp
+  (require 'el-get)
+  (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+#+END_SRC
 
 ** Load third party packages
 
@@ -77,8 +82,6 @@
    :END:
 
 #+Begin_SRC emacs-lisp
-  ;; (load-theme 'tangotango) ;; disagrees with helm-selection face color
-  ;; (load-theme 'zenburn)
   (require 'moe-theme)
   (setq powerline-moe-theme t)
   (moe-dark)
