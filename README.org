@@ -1,0 +1,5 @@
+My emacs setup, using  [[https://github.com/bbatsov/prelude][emacs-prelude]].
+
+This is a redo started in June 2015.  Previous repo: https://github.com/iani/emacs-prelude
+
+Includes two own libraries through [[http://tapoueh.org/emacs/el-get.html][el-get]].

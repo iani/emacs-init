@@ -238,11 +238,8 @@
 #+BEGIN_SRC emacs-lisp
 (setq org-src-fontify-natively t)
 #+END_SRC
-*** Keyboard shortcuts for org-mode                                  :ATTACH:
-    :PROPERTIES:
-    :Attachments: test-attacment-1.org
-    :ID:       513D7E02-3ADD-4542-8F13-369A8C351F16
-    :END:
+*** Turn visual-line and icy on and whitespace off
+
 #+BEGIN_SRC emacs-lisp
   ;; icicle key binding conflicts fixed with:
   ;; M-x customize-group RET Icicles-Key-Bindings
@@ -253,6 +250,63 @@
               (visual-line-mode)
               (whitespace-mode -1)))
 
+#+END_SRC
+
+*** Set Date property
+:PROPERTIES:
+:DATE:     <2015-06-25 Thu 00:47>
+:END:
+
+#+BEGIN_SRC emacs-lisp
+  (defun org-set-date (&optional active property)
+    "Set DATE property with current time.  Active timestamp."
+    (interactive "P")
+    (org-set-property
+     (if property property "DATE")
+     (cond ((equal active nil)
+            (format-time-string (cdr org-time-stamp-formats) (current-time)))
+           ((equal active '(4))
+            (concat "["
+                    (substring
+                     (format-time-string (cdr org-time-stamp-formats) (current-time))
+                     1 -1)
+                    "]"))
+           ((equal active '(16))
+            (concat
+             "["
+             (substring
+              (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))
+              1 -1)
+             "]"))
+           ((equal active '(64))
+            (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))))))
+
+  ;; Note: This keybinding is in analogy to the standard keybinding:
+  ;; C-c . -> org-time-stamp
+  (add-hook 'org-mode-hook
+            (lambda ()
+              (local-set-key (kbd "C-S-c d") 'org-set-date)))
+
+#+END_SRC
+
+*** Org-babel load current file
+
+#+BEGIN_SRC emacs-lisp
+  (defun org-babel-load-current-file ()
+    (interactive)
+    (org-babel-load-file (buffer-file-name (current-buffer))))
+
+  (defun org-babel-compile-current-file ()
+    (interactive)
+    (org-babel-load-current-file)
+    (byte-compile-file (concat (file-name-sans-extension (buffer-file-name)) ".el")))
+
+  ;; Note: Overriding default key binding to provide consistent pattern:
+  ;; C-c C-v f -> tangle, C-c C-v C-f -> load
+  (eval-after-load 'org
+    '(define-key org-mode-map (kbd "C-c C-v C-f") 'org-babel-load-current-file))
+  (eval-after-load 'org
+    '(define-key org-mode-map (kbd "C-c C-v C-F") 'org-babel-compile-current-file))
 #+END_SRC
 
 ** SuperCollider
