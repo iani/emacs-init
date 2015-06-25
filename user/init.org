@@ -4,7 +4,7 @@
 
 #+BEGIN_SRC emacs-lisp
   (require 'el-get)
-  (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
+  (add-to-list 'el-get-recipe-path "~/.emacs.d/personal/recipes")
 #+END_SRC
 
 ** Load third party packages
@@ -275,7 +275,7 @@
 Setup:
 
 #+BEGIN_SRC emacs-lisp
-  (require 'sclang)
+  ;; (require 'sclang) ;; no good if loading sclang for the first time from el-get
   (defvar sc_userAppSupportDir
     (expand-file-name "~/Library/Application Support/SuperCollider"))
 

@@ -1,0 +1,4 @@
+(:name sclang :url "https://github.com/iani/sclang.git"
+       :type git
+       :features (sclang)
+       :after nil)

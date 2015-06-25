@@ -1,0 +1,4 @@
+(:name org-notes :url "https://github.com/iani/org-notes.git"
+       :type git
+       :features (org-notes)
+       :after nil)

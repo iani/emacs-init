@@ -1,0 +1,6 @@
+(:name org-pm :url "https://github.com/iani/org-pm.git"
+       :type git
+       :features (org-pm)
+       :after nil)
+
+

@@ -1,0 +1,4 @@
+(:name sc-snippets :url "https://github.com/iani/sc-snippets.git"
+       :type git
+       :features (sc-snippets)
+       :after nil)
