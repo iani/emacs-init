@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
- '(bmkp-last-as-first-bookmark-file "/Users/iani/.emacs.d/savefile/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/savefile/bookmarks")
  '(bookmark-default-file "/Users/iani/.emacs.d/savefile/bookmarks")
  '(cursor-type (quote hbar))
  '(custom-enabled-themes (quote (tangotango)))

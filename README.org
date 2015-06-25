@@ -8,7 +8,7 @@ The main code is contained in: https://github.com/iani/emacs-init/blob/master/us
 
 It is loaded through https://github.com/iani/emacs-init/blob/master/init.el using =org-babel-load-file=
 
-Plans are to move the contents of the =preload=  and =packages= to separate repositories and use =el=get= to load these.
+The present set up uses el-get to load several extensions to Org-mode and enable SuperCollider in emacs, from repositories available in my [[https://github.com/iani][github account]].
 
 * List of Used Packages
 ** Third party
@@ -16,9 +16,8 @@ Plans are to move the contents of the =preload=  and =packages= to separate repo
 
 - el-get
 
-*** Navigation, movement, command completion
-- ace
-- smex
+*** Navigation, movement, command completion, search
+- ace-mode
 - ido-vertical-mode
 - ido-universal
 - grizzl
@@ -26,11 +25,14 @@ Plans are to move the contents of the =preload=  and =packages= to separate repo
 - helm-swoop
 - icicles
 - imenu+
+- multi-occur
+- color-moccur
+- smex (??? not really used ???)
 
 *** Window and buffer management
 - windmove (built-in)
 - buffer-move
-
+- switch-window
 *** Bookmarks
 - bookmark+
 

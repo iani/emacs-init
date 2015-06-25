@@ -1,1 +1,0 @@
-/Users/iani/Documents/Dev/SuperCollider/tiny-sc/Org-sc/org-sc.el

@@ -16,10 +16,22 @@
 ** Load own el-get packages
 
 #+BEGIN_SRC emacs-lisp
-  (el-get-install 'org-pm)
-  (require 'org-pm)
-  (el-get-install 'org-notes)
-  (require 'org-notes)
+  ;; easier to customize
+
+  (let ((packages
+         '(
+           ;; modify the following list to customize:
+           org-pm
+           org-notes
+           org-sc
+           sclang
+           sc-snippets
+           ))
+        url)
+    (dolist (p packages)
+      (message "Adding package: %s to el-get for loading ..." p)
+      (el-get-install p) ;; also makes available. require not required
+      (message "... package %s added to el-get load queue." p)))
 #+END_SRC
 
 * General
@@ -114,7 +126,7 @@
   (global-set-key (kbd "s-M-<down>") 'buf-move-down)
 #+END_SRC
 
-*** Ace-jump
+*** Ace-jump, Switch-window
 
 #+BEGIN_SRC emacs-lisp
   (global-set-key (kbd "C-S-a c") 'ace-jump-char-mode)
@@ -123,6 +135,8 @@
   (global-set-key (kbd "C-S-a b") 'ace-jump-buffer)
   (global-set-key (kbd "C-S-a d") 'ace-window)
   (global-set-key (kbd "C-S-a W") 'ace-window)
+  (global-set-key (kbd "C-S-a s") 'switch-window)
+  (global-set-key (kbd "s-W") 'switch-window) ;; related to  ace-window s-w
 #+END_SRC
 ** Command Completion and Auto-Complete
 #+BEGIN_SRC emacs-lisp
