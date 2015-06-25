@@ -9,3 +9,55 @@ The main code is contained in: https://github.com/iani/emacs-init/blob/master/us
 It is loaded through https://github.com/iani/emacs-init/blob/master/init.el using =org-babel-load-file=
 
 Plans are to move the contents of the =preload=  and =packages= to separate repositories and use =el=get= to load these.
+
+* List of Used Packages
+** Third party
+*** Package management
+
+- el-get
+
+*** Navigation, movement, command completion
+- ace
+- smex
+- ido-vertical-mode
+- ido-universal
+- grizzl
+- flx-ido
+- helm-swoop
+- icicles
+- imenu+
+
+*** Window and buffer management
+- windmove (built-in)
+- buffer-move
+
+*** Bookmarks
+- bookmark+
+
+*** Note taking
+- deft
+*** theme and colors
+
+- powerline
+- moe-theme
+
+*** Org-mode extensions
+- calfw
+
+
+*** Coding support
+- paredit
+- hl-sexp
+- multiple-cursors
+- rainbow-delimiters
+- litable
+- linum-relative
+
+*** To examine
+
+- FrameMove
+- toggle-window-split
+** Own libraries
+
+- org-notes :: Note taking framework
+- org-pm :: Publish any org-mode file or section to multiple projects
