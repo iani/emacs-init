@@ -463,5 +463,5 @@
  '(rainbow-delimiters-depth-7-face ((t (:foreground "gold1"))))
  '(rainbow-delimiters-depth-8-face ((t (:foreground "orange"))))
  '(rainbow-delimiters-depth-9-face ((t (:foreground "#C00"))))
- '(region ((t (:background "IndianRed4")))))
+ '(region ((t (:background "DarkSeaGreen1" :foreground "RoyalBlue2")))))
  
