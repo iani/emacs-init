@@ -61,3 +61,6 @@ The present set up uses el-get to load several extensions to Org-mode and enable
 
 - org-notes :: Note taking framework
 - org-pm :: Publish any org-mode file or section to multiple projects
+- org-sc :: Evaluate SuperCollider source code blocks from an org-mode buffer.
+- sclang :: Enable SuperCollider in Emacs
+- sc-snippets :: Select, navigate, evaluate blocks of SuperCollider code separated by comments of the form =//:=.
