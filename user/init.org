@@ -310,6 +310,8 @@ Shortcuts:
   (global-set-key (kbd "C-c M-s") 'sclang-start)
   ;; Show workspace
   (global-set-key (kbd "C-c C-M-w") 'sclang-switch-to-workspace)
+  (global-set-key (kbd "C-S-c l") 'sclang-recompile)
+  (global-set-key (kbd "C-S-c c") 'sclang-clear-post-buffer)
 #+END_SRC
 ** magit
 
