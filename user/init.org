@@ -75,11 +75,22 @@
   (global-set-key (kbd "C-c C-+") 'larger-frame-font)
 #+END_SRC
 
-** Cursor
+** Cursor + God mode
 
 #+BEGIN_SRC emacs-lisp
   (blink-cursor-mode 1)
   (setq visible-bell t)
+#+END_SRC
+
+Indicate God and read only mode by cursor shape:
+
+#+BEGIN_SRC emacs-lisp
+(defun my-update-cursor ()
+  (setq cursor-type (if (or god-local-mode buffer-read-only)
+                        'box
+                      'hbar)))
+(add-hook 'god-mode-enabled-hook 'my-update-cursor)
+(add-hook 'god-mode-disabled-hook 'my-update-cursor)
 #+END_SRC
 
 ** Navigation
