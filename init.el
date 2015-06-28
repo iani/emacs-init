@@ -1,3 +1,6 @@
+(let ((host-file (concat system-name ".el")))
+  (if (file-exists-p host-file)
+      (load-file host-file)))
 
 (org-babel-load-file
  (concat
