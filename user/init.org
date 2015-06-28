@@ -11,6 +11,7 @@
 
 #+BEGIN_SRC emacs-lisp
   (require 'bookmark+)
+  (require 'evil-org)
 #+END_SRC
 
 ** Load own el-get packages
@@ -75,7 +76,7 @@
   (global-set-key (kbd "C-c C-+") 'larger-frame-font)
 #+END_SRC
 
-** Cursor + God mode
+** Cursor display, Evil + God mode
 
 #+BEGIN_SRC emacs-lisp
   (blink-cursor-mode 1)
@@ -91,6 +92,12 @@ Indicate God and read only mode by cursor shape:
                       'hbar)))
 (add-hook 'god-mode-enabled-hook 'my-update-cursor)
 (add-hook 'god-mode-disabled-hook 'my-update-cursor)
+#+END_SRC
+
+Evil mode
+
+#+BEGIN_SRC emacs-lisp
+  (global-set-key (kbd "C-S-e") 'evil-mode)
 #+END_SRC
 
 ** Navigation
@@ -173,17 +180,22 @@ Indicate God and read only mode by cursor shape:
     (interactive)
     (load-file (file-truename "~/.emacs.d/personal/init.el")))
 #+END_SRC
-* Modes
+* Main Modes
 ** Emacs-lisp-mode
+:PROPERTIES:
+:ID:       C522F876-43A8-4A46-A81C-EB617A964A0A
+:eval-id:  9
+:END:
 
 #+BEGIN_SRC emacs-lisp
   (add-hook 'emacs-lisp-mode-hook 'hl-sexp-mode)
   (add-hook 'emacs-lisp-mode-hook 'hs-minor-mode)
-  (global-set-key (kbd "C-s-L l") 'hs-hide-level) ;; there is no show level
-  (global-set-key (kbd "C-s-L A") 'hs-show-all)
-  (global-set-key (kbd "C-s-L a") 'hs-hide-all)
-  (global-set-key (kbd "C-s-L b") 'hs-hide-block)
-  (global-set-key (kbd "C-s-L B") 'hs-show-block)
+  (global-set-key (kbd "C-x n l") 'hs-hide-level) ;; there is no show level
+  (global-set-key (kbd "C-x n A") 'hs-show-all)
+  (global-set-key (kbd "C-x n a") 'hs-hide-all)
+  (global-set-key (kbd "C-x n b") 'hs-hide-block)
+  (global-set-key (kbd "C-x n B") 'hs-show-block)
+  (global-set-key (kbd "C-x n t") 'hs-toggle-hiding)
 
   (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)
   (require 'paredit) ;; smart edit parentheses
@@ -230,34 +242,38 @@ Indicate God and read only mode by cursor shape:
 :END:
 
 #+BEGIN_SRC emacs-lisp
-  (defun org-set-date (&optional active property)
-    "Set DATE property with current time.  Active timestamp."
-    (interactive "P")
-    (org-set-property
-     (if property property "DATE")
-     (cond ((equal active nil)
-            (format-time-string (cdr org-time-stamp-formats) (current-time)))
-           ((equal active '(4))
-            (concat "["
-                    (substring
-                     (format-time-string (cdr org-time-stamp-formats) (current-time))
-                     1 -1)
-                    "]"))
-           ((equal active '(16))
-            (concat
-             "["
-             (substring
-              (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))
-              1 -1)
-             "]"))
-           ((equal active '(64))
-            (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))))))
+    (defun org-set-date (&optional active property)
+      "Set DATE property with current time.  Active timestamp."
+      (interactive "P")
+      (org-set-property
+       (if property property "DATE")
+       (cond ((equal active nil)
+              (format-time-string (cdr org-time-stamp-formats) (current-time)))
+             ((equal active '(4))
+              (concat "["
+                      (substring
+                       (format-time-string (cdr org-time-stamp-formats) (current-time))
+                       1 -1)
+                      "]"))
+             ((equal active '(16))
+              (concat
+               "["
+               (substring
+                (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))
+                1 -1)
+               "]"))
+             ((equal active '(64))
+              (format-time-string (cdr org-time-stamp-formats) (org-read-date t t))))))
 
-  ;; Note: This keybinding is in analogy to the standard keybinding:
-  ;; C-c . -> org-time-stamp
-  (add-hook 'org-mode-hook
-            (lambda ()
-              (local-set-key (kbd "C-S-c d") 'org-set-date)))
+    ;; Note: This keybinding is in analogy to the standard keybinding:
+    ;; C-c . -> org-time-stamp
+    (add-hook 'org-mode-hook
+              (lambda ()
+                (evil-org-mode)
+                (local-set-key (kbd "C-S-c d") 'org-set-date)
+                (local-set-key (kbd "C-S-c s") 'org-show-subtree)
+                (local-set-key (kbd "C-c C-x s") 'org-show-subtree)
+                (local-set-key (kbd "C-x n S") 'org-show-subtree)))
 
 #+END_SRC
 

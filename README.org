@@ -9,12 +9,12 @@ It is loaded through https://github.com/iani/emacs-init/blob/master/init.el usin
 The present set up uses el-get to load several extensions to Org-mode and enable SuperCollider in emacs, from repositories available in my [[https://github.com/iani][github account]].  The el-get recipes for these packages are included here in folder =recipes=.  They should load automatically on a new install of the present library.
 
 * List of Used Packages
-** Third party
-*** Package management
+** third party
+*** package management
 
 - el-get
 
-*** Navigation, movement, command completion, search
+*** navigation, movement, command completion, search
 - ace-mode
 - ido-vertical-mode
 - ido-universal
@@ -27,31 +27,34 @@ The present set up uses el-get to load several extensions to Org-mode and enable
 - color-moccur
 - smex (??? not really used ???)
 
-*** Window and buffer management
+*** window and buffer management
 - windmove (built-in)
 - buffer-move
 - switch-window
-*** Bookmarks
+*** bookmarks
 - bookmark+
 
-*** Note taking
-- deft
+*** note taking
+- deft :: full-text search and fast access to a set of files in a folder (see also own extension: superdeft, part of own library org-notes.)
 *** theme and colors
 
-- powerline
-- moe-theme
+- powerline :: mode-line enhancement
+- moe-theme :: colorful emacs color theme
 
-*** Org-mode extensions
-- calfw
+*** org-mode extensions
+- calfw :: calendar framework for org-mode
 
-
-*** Coding support
-- paredit
-- hl-sexp
-- multiple-cursors
-- rainbow-delimiters
-- litable
-- linum-relative
+*** coding support
+- paredit :: edit parentheses
+- hl-sexp :: highlight symbolic expressions
+- multiple-cursors :: multiple cursors
+- rainbow-delimiters :: rainbow colored delimiters
+- litable :: light table: display lisp expression value in buffer.
+- linum-relative :: relative line numbers
+- er :: expand region, built-in
+- evil :: evil mode
+- evil-leader :: required for evil-org
+- evil-org :: evil keys for org-mode
 
 *** To examine
 
@@ -59,7 +62,7 @@ The present set up uses el-get to load several extensions to Org-mode and enable
 - toggle-window-split
 ** Own libraries
 
-- org-notes :: Note taking framework
+- org-notes :: Note taking framework.  Includes deft extension: superdeft.
 - org-pm :: Publish any org-mode file or section to multiple projects
 - org-sc :: Evaluate SuperCollider source code blocks from an org-mode buffer.
 - sclang :: Enable SuperCollider in Emacs
