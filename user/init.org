@@ -222,7 +222,7 @@ Evil mode
 #+BEGIN_SRC emacs-lisp
 (setq org-src-fontify-natively t)
 #+END_SRC
-*** Turn visual-line and icy on and whitespace off
+*** Turn visual-line and icy on and whitespace off, workaround for org-shiftmetadown
 
 #+BEGIN_SRC emacs-lisp
   ;; icicle key binding conflicts fixed with:
@@ -232,10 +232,13 @@ Evil mode
             (lambda ()
               (icy-mode)
               (visual-line-mode)
-              (whitespace-mode -1)))
+              (whitespace-mode -1)
+              ;; workaround:
+              ;; unknown why on one machine the org-shiftmetadown key is overwritten
+              (local-set-key (kbd "C-M-S-<down>") 'org-table-insert-row)
+              (local-set-key (kbd "C-M-S-<up>") 'org-table-kill-row)))
 
 #+END_SRC
-
 *** Set Date property
 :PROPERTIES:
 :DATE:     <2015-06-25 Thu 00:47>
