@@ -6,7 +6,7 @@ The main code is contained in: https://github.com/iani/emacs-init/blob/master/us
 
 It is loaded through https://github.com/iani/emacs-init/blob/master/init.el using =org-babel-load-file=
 
-The present set up uses el-get to load several extensions to Org-mode and enable SuperCollider in emacs, from repositories available in my [[https://github.com/iani][github account]].  The el-get recipes for these packages are included here in folder =recipes=.  They should load automatically on a new install of the present library.
+The present set up uses el-get to load several extensions to Org-mode and enable SuperCollider in emacs, from repositories available in my [[https://github.com/iani][github account]].  The el-get recipes for these packages are included here in folder [[recipes]].  They should load automatically on a new install of the present library.
 
 * List of Used Packages
 ** third party
