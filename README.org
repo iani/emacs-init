@@ -47,6 +47,7 @@ The present set up uses el-get to load several extensions to Org-mode and enable
 *** coding support
 - paredit :: edit parentheses
 - hl-sexp :: highlight symbolic expressions
+- hideshow :: (Built-in:) Hide/show nested code blocks
 - multiple-cursors :: multiple cursors
 - rainbow-delimiters :: rainbow colored delimiters
 - litable :: light table: display lisp expression value in buffer.
