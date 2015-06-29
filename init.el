@@ -1,5 +1,5 @@
 ;; load computer-specific customizations:
-(let ((host-file (concat system-name ".el")))
+(let ((host-file (concat "hosts/" system-name ".el")))
   (if (file-exists-p host-file)
       (load-file host-file)))
 
