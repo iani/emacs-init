@@ -422,7 +422,10 @@
        (quote lacarte-execute-menu-command))))))
  '(initial-frame-alist (quote ((fullscreen . fullboth))))
  '(org-attach-directory "~/.org-attachments/")
+ '(org-babel-load-languages (quote ((awk . t) (emacs-lisp . t) (sh . t))))
+ '(org-hide-block-startup t)
  '(org-imenu-depth 5)
+ '(org-startup-folded nil)
  '(powerline-default-separator (quote contour))
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
