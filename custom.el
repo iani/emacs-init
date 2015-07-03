@@ -427,6 +427,7 @@
  '(org-imenu-depth 5)
  '(org-startup-folded nil)
  '(powerline-default-separator (quote contour))
+ '(tab-width 3)
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
    (quote
