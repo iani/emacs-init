@@ -176,9 +176,16 @@ Evil mode
 :DATE:     <2015-07-06 Mon 12:27>
 :END:
 
+Global keyboard shortcut for speedbar
+
+#+BEGIN_SRC emacs-lisp
+(require 'speedbar)
+(global-set-key (kbd "C-S-c s") 'sr-speedbar-toggle)
+#+END_SRC
+
 SuperCollider file support in speedbar
 #+BEGIN_SRC emacs-lisp
-  (speedbar-add-supported-extension '(".sc" ".scd"))
+(speedbar-add-supported-extension '(".sc" ".scd"))
 #+END_SRC
 
 ** Command Completion and Auto-Complete
@@ -299,7 +306,7 @@ SuperCollider file support in speedbar
               (lambda ()
                 (evil-org-mode)
                 (local-set-key (kbd "C-S-c d") 'org-set-date)
-                (local-set-key (kbd "C-S-c s") 'org-show-subtree)
+                ;; (local-set-key (kbd "C-S-c s") 'org-show-subtree) ;; used for speedbar
                 (local-set-key (kbd "C-c C-x s") 'org-show-subtree)
                 (local-set-key (kbd "C-x n S") 'org-show-subtree)))
 

@@ -428,6 +428,7 @@
  '(org-startup-folded nil)
  '(powerline-default-separator (quote contour))
  '(speedbar-show-unknown-files t)
+ '(sr-speedbar-right-side nil)
  '(tab-width 3)
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-color-map
