@@ -170,6 +170,17 @@ Evil mode
   (global-set-key (kbd "C-S-a s") 'switch-window)
   (global-set-key (kbd "s-W") 'switch-window) ;; related to  ace-window s-w
 #+END_SRC
+
+*** speedbar support
+:PROPERTIES:
+:DATE:     <2015-07-06 Mon 12:27>
+:END:
+
+SuperCollider file support in speedbar
+#+BEGIN_SRC emacs-lisp
+  (speedbar-add-supported-extension '(".sc" ".scd"))
+#+END_SRC
+
 ** Command Completion and Auto-Complete
 #+BEGIN_SRC emacs-lisp
   (require 'ido)
