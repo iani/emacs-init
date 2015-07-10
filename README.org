@@ -23,9 +23,10 @@ The present set up uses el-get to load several extensions to Org-mode and enable
 - helm-swoop
 - icicles
 - imenu+
+- speedbar (actually using: sr-speedbar to include the speedbar window in the main frame)
 - multi-occur
 - color-moccur
-- smex (??? not really used ???)
+- smex (??? not really used? - helm-M-x has the same functionality and a better interface)
 
 *** window and buffer management
 - windmove (built-in)
