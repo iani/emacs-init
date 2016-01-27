@@ -1,3 +1,5 @@
+No longer used.  Please see [[https://github.com/iani/emacs-prelude-personal]] for the current version.
+
 My emacs setup, using  [[https://github.com/bbatsov/prelude][emacs-prelude]].
 
 This is a redo started in June 2015.  Previous repo: https://github.com/iani/emacs-prelude
